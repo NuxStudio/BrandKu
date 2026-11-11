@@ -165,7 +165,7 @@ nav a.ikon-nav:hover svg {
 .about-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 40px;
     max-width: 900px;
     margin: 0 auto;
@@ -174,7 +174,6 @@ nav a.ikon-nav:hover svg {
 
 .about-teks {
     flex: 1;
-    min-width: 300px;
 }
 
 .about-teks p {
@@ -188,12 +187,12 @@ nav a.ikon-nav:hover svg {
     flex: 1;
     display: flex;
     justify-content: center;
-    width: 100%;
+    max-width: 50%;
 }
 
 .about-gambar img {
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -344,7 +343,7 @@ footer {
         gap: 30px;
     }
     
-    .about-gambar img {
+    .about-gambar {
         max-width: 100%;
     }
     
