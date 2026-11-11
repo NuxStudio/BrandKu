@@ -52,6 +52,7 @@ header {
     height: 38px; 
     object-fit: cover;
     border-radius: 50%;
+    display: block;
 }
 
 nav a {
@@ -157,14 +158,41 @@ nav a.ikon-nav:hover svg {
     border-radius: 2px;
 }
 
-.teks-about {
-    max-width: 800px;
+/* --- CSS KHUSUS HALAMAN ABOUT US --- */
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 900px;
     margin: 0 auto;
     text-align: left;
-    color: #475569;
-    line-height: 1.8;
 }
 
+.about-teks {
+    flex: 1;
+}
+
+.about-teks p {
+    color: #475569;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.about-gambar {
+    flex: 1;
+}
+
+.about-gambar img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+/* --- CSS PRODUK --- */
 .kotak-produk {
     display: flex;
     justify-content: center;
@@ -210,6 +238,7 @@ nav a.ikon-nav:hover svg {
     font-size: 18px;
 }
 
+/* --- CSS TESTIMONI --- */
 .kotak-testi {
     display: flex;
     justify-content: center;
@@ -246,6 +275,7 @@ nav a.ikon-nav:hover svg {
     font-size: 16px;
 }
 
+/* --- CSS KONTAK --- */
 .deret-kontak {
     display: flex;
     justify-content: center;
@@ -287,6 +317,19 @@ nav a.ikon-nav:hover svg {
 
 .item-kontak:hover span {
     color: #3b82f6;
+}
+
+/* --- CSS RESPONSIVE (BUAT DI HP) --- */
+@media (max-width: 768px) {
+    .about-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-gambar img {
+        max-width: 100%;
+        margin-top: 20px;
+    }
 }
 
 footer {
