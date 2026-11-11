@@ -5,6 +5,10 @@
     font-family: Arial, sans-serif;
 }
 
+html, body {
+    overflow-x: hidden; /* Mencegah layar bisa digeser ke kanan (zoom out) */
+}
+
 body {
     background-color: #ffffff;
     color: #333333;
@@ -158,7 +162,7 @@ nav a.ikon-nav:hover svg {
     border-radius: 2px;
 }
 
-/* --- CSS KHUSUS HALAMAN ABOUT US --- */
+/* --- ABOUT US --- */
 .about-wrapper {
     display: flex;
     align-items: center;
@@ -182,17 +186,21 @@ nav a.ikon-nav:hover svg {
 
 .about-gambar {
     flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .about-gambar img {
     width: 100%;
-    max-width: 400px;
+    max-width: 100%; /* Dijamin tidak akan melebihi kotaknya */
+    height: auto; /* Proporsional */
+    object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: block;
 }
 
-/* --- CSS PRODUK --- */
+/* --- PRODUK --- */
 .kotak-produk {
     display: flex;
     justify-content: center;
@@ -238,7 +246,7 @@ nav a.ikon-nav:hover svg {
     font-size: 18px;
 }
 
-/* --- CSS TESTIMONI --- */
+/* --- TESTIMONI --- */
 .kotak-testi {
     display: flex;
     justify-content: center;
@@ -275,7 +283,7 @@ nav a.ikon-nav:hover svg {
     font-size: 16px;
 }
 
-/* --- CSS KONTAK --- */
+/* --- KONTAK --- */
 .deret-kontak {
     display: flex;
     justify-content: center;
@@ -319,23 +327,32 @@ nav a.ikon-nav:hover svg {
     color: #3b82f6;
 }
 
-/* --- CSS RESPONSIVE (BUAT DI HP) --- */
-@media (max-width: 768px) {
-    .about-wrapper {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .about-gambar img {
-        max-width: 100%;
-        margin-top: 20px;
-    }
-}
-
 footer {
     background-color: #1e293b;
     color: #94a3b8;
     text-align: center;
     padding: 20px;
     font-size: 14px;
+}
+
+/* --- RESPONSIVE (HP & TABLET) --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Menu turun ke bawah di HP */
+        gap: 15px;
+    }
+
+    .about-wrapper {
+        flex-direction: column; /* Teks di atas, gambar di bawah */
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .about-gambar img {
+        max-width: 100%; /* Penuhi layar HP */
+    }
+    
+    .banner h1 {
+        font-size: 32px;
+    }
 }
